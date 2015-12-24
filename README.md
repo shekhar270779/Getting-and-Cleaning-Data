@@ -1,7 +1,7 @@
 ## Getting-and-Cleaning-Data
-#Assignemt question
+#Assignment question
 
-Follow following insturction to execute R script
+Follow following instruction to execute R script
 
 1. Extract the source data in a folder on your computer
 #it would further have 2 sub folders, i.e test and train.
