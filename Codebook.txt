@@ -1,0 +1,50 @@
+Getting and Cleaning Data Course Project CodeBook
+
+This file describes variables, data and any transformations performed to clean up the data.
+
+Data for assignment is downloaded from site following
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
+
+Download zip file on my computer and save it in a folder
+Extracted the zipped data
+
+Launch R Studio, set working directory using setwd() to folder where data was unzipped 
+
+run_analysis.R script is created in the same directory
+
+read activity_labels.txt file into data frame activityLabels
+give meaningful column names to activityLabels df (data frame)
+
+read features.txt file into features df
+give meaningful column names to features df 
+
+from test sub directory, read 3 files. set stringsAs Factors as FALSE so that all strings are not converted into factors
+1. x_test.txt into xTest df # represents actual data
+2. y_test.txt into yTest df # represents activity
+3. subject_test.txt into subTest df # represents subject
+
+combine columns of above 3 df into one df TestData
+rename columns of TestData df to meaningful names like subject, activity, featuresnames of features df
+
+set subject and activity as factorial
+set levels of activity factorial
+
+
+Perform similar steps for train data
+and create TrainData
+
+rowbind TestData and TrainData into a single dataframe 'data'
+
+since column names contain invalid characters, get it removed using make.names func
+remove all dots from col names
+set col names of data df.
+
+convert data df to tbl_df after loading dplyr package
+
+select columns where name contain mean and std in it and store data in subdata
+
+group by data based on subject and activity, and calculate mean for all columns
+and store data in finaldata
+
+save finaldata into a file.
+
